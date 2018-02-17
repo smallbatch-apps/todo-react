@@ -8,8 +8,9 @@ import {fetchItems, createItem} from '../actions/index';
 
 class TodoList extends Component {
   
-  componentDidMount() {
-    this.props.fetchItems();
+  constructor(props) {
+    super(props);
+    props.fetchItems();
   }
 
   create(title) {
@@ -17,7 +18,6 @@ class TodoList extends Component {
   }
 
   renderList() {
-
     return this.props.todos.map((todo, index) => (
       <TodoItem key={index} item={todo} currentItem={this.props.currentItem} />
     ));

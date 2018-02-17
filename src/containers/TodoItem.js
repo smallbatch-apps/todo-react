@@ -9,6 +9,7 @@ class TodoItem extends Component {
   constructor(props){
     super(props);
     this.state = {
+      item: props.item,
       checked: props.item ? props.item.checked : false,
       title: props.item ? props.item.title : ''
     }
